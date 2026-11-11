@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Pocket Ledger</string>
+    <string name="quick_action_title">快捷操作</string>
+    <string name="quick_action_record_income">记一笔</string>
+    <string name="quick_action_record_expenses">记支出</string>
+    <string name="quick_action_record_statistics">看统计</string>
+    <string name="quick_action_record_subscription">管理订阅</string>
+    <string name="recent_transactions">最近交易</string>
+    <string name="choose_category">选择分类</string>
+    <string name="additional_information">选择分类</string>
+    <string name="show_all">查看全部</string>
 </resources>

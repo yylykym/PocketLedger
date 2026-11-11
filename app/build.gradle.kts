@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.room3.runtime)
     ksp(libs.room3.compiler)
     implementation(platform(libs.androidx.compose.bom))

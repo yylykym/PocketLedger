@@ -16,14 +16,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yylykym.pocketledger.R
+import java.time.LocalDate
 import java.time.YearMonth
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun MonthSelector(yearMonth: YearMonth, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun MonthSelector(date: LocalDate, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Surface(
         modifier = modifier,
         onClick = onClick,
@@ -35,7 +38,7 @@ fun MonthSelector(yearMonth: YearMonth, onClick: () -> Unit, modifier: Modifier 
                 .height(48.dp)
                 .padding(horizontal = 18.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Icon(
                 painter = painterResource(R.drawable.calendar),
@@ -44,7 +47,8 @@ fun MonthSelector(yearMonth: YearMonth, onClick: () -> Unit, modifier: Modifier 
             )
 
             Text(
-                text = "${yearMonth.year} 年 ${yearMonth.monthValue} 月",
+                modifier = Modifier.weight(1f),
+                text = "${date.year} 年 ${date.monthValue} 月 ${date.dayOfMonth} 日",
                 style = MaterialTheme.typography.titleMedium
             )
 
@@ -55,3 +59,4 @@ fun MonthSelector(yearMonth: YearMonth, onClick: () -> Unit, modifier: Modifier 
         }
     }
 }
+
